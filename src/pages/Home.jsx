@@ -9,6 +9,7 @@ import RevealOnScroll from '../components/ui/RevealOnScroll';
 import SectionHeading from '../components/ui/SectionHeading';
 import MenuCard from '../components/ui/MenuCard';
 import Testimonials from '../components/Testimonials';
+import TypewriterText from '../components/ui/TypewriterText';
 
 const Home = () => {
   // Hero text stagger animation
@@ -56,14 +57,37 @@ const Home = () => {
             className="max-w-3xl"
           >
 
-            <motion.h1
-              variants={child}
-              className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-tight"
-            >
-              Big Flavor.
-              <br />
-              <span className="text-gold-500 text-shadow-gold">Bigger Cravings.</span>
-            </motion.h1>
+<motion.h1
+  variants={child}
+  className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-tight"
+>
+  <div>
+    <TypewriterText
+      text="Big Flavor."
+      speed={60}
+      startDelay={0}
+      cursorHideDelay={500}
+    />
+  </div>
+  <div>
+    <TypewriterText
+      text="Bigger"
+      speed={60}
+      startDelay={1000} // after first line finishes (~660ms) + short pause
+      cursorHideDelay={500}
+      className="text-gold-500 text-shadow-gold"
+    />
+  </div>
+  <div>
+    <TypewriterText
+      text="Cravings."
+      speed={60}
+      startDelay={1900} // after second line finishes (~360ms) + pause
+      cursorHideDelay={500}
+      className="text-gold-500 text-shadow-gold"
+    />
+  </div>
+</motion.h1>
 
             <motion.p
               variants={child}
