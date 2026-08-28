@@ -62,6 +62,28 @@
     ],
   },
   {
+    category: "Sandwiches", // new category
+    items: [
+      { 
+        name: "Sandwich", 
+        price: 2500, 
+        image: "/sandwich.avif",
+        description: "A hearty sandwich loaded with fresh ingredients and your choice of filling."
+      },
+    ],
+  },
+  {
+    category: "Popcorn", // new category
+    items: [
+      { 
+        name: "Popcorn", 
+        price: 1000, 
+        image: "/popcorn.avif",
+        description: "Light, fluffy popcorn, perfectly salted for a crunchy snack."
+      },
+    ],
+  },
+  {
     category: "Drinks & Desserts",
     items: [
       { 
@@ -122,5 +144,18 @@ export const featuredItems = [
     price: 3500, 
     image: "/parfait.avif",
     description: "Layered dessert with yoghurt, granola, and fruits."
+  },
+  // Added new featured items
+  { 
+    name: "Sandwich", 
+    price: 2500, 
+    image: "/sandwich.avif",
+    description: "A hearty sandwich loaded with fresh ingredients."
+  },
+  { 
+    name: "Popcorn", 
+    price: 1000, 
+    image: "/popcorn.avif",
+    description: "Light, fluffy popcorn, perfectly salted."
   },
 ];
