@@ -1,6 +1,5 @@
 ﻿// src/pages/Menu.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Utensils } from 'lucide-react';
 import { menuData } from '../data/menuData';
@@ -8,6 +7,7 @@ import Button from '../components/ui/Button';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
 import SectionHeading from '../components/ui/SectionHeading';
 import MenuCard from '../components/ui/MenuCard';
+import MenuListItem from '../components/ui/MenuListItem';  // 👈 import the list item
 
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState(menuData[0]?.category || '');
@@ -80,7 +80,7 @@ const Menu = () => {
               Our <span className="text-gold-500">Menu</span>
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Explore our curated selection of bold flavors, from perfectly spiced shawarma 
+              Explore our curated selection of bold flavors — from perfectly spiced shawarma 
               to loaded fries and premium burgers. Every dish is made to crave.
             </p>
           </RevealOnScroll>
@@ -111,7 +111,7 @@ const Menu = () => {
       {/* ===== MENU SECTIONS ===== */}
       <section className="section-padding bg-off-white">
         <div className="container-custom">
-          {menuData.map((category, index) => (
+          {menuData.map((category) => (
             <div
               key={category.category}
               ref={categoryRefs.current[category.category]}
@@ -125,31 +125,59 @@ const Menu = () => {
                 />
               </RevealOnScroll>
 
-<motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.05 }}
-  variants={{
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.06 },
-    },
-  }}
-  className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
->
-  {category.items.map((item) => (
-    <motion.div
-      key={item.name}
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0 },
-      }}
-    >
-      <MenuCard {...item} size="sm" />   {/* 👈 compact size */}
-    </motion.div>
-  ))}
-</motion.div>
+              {/* === GRID VIEW (hidden on mobile) === */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.05 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.06 },
+                  },
+                }}
+                className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
+              >
+                {category.items.map((item) => (
+                  <motion.div
+                    key={item.name}
+                    variants={{
+                      hidden: { opacity: 0, y: 30 },
+                      visible: { opacity: 1, y: 0 },
+                    }}
+                  >
+                    <MenuCard {...item} size="sm" />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* === LIST VIEW (visible only on mobile) === */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.05 }}
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: { staggerChildren: 0.05 },
+                  },
+                }}
+                className="sm:hidden flex flex-col gap-3"
+              >
+                {category.items.map((item) => (
+                  <motion.div
+                    key={item.name}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                  >
+                    <MenuListItem {...item} />
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           ))}
         </div>
@@ -167,7 +195,7 @@ const Menu = () => {
             </p>
             <Button
               as="a"
-              href="https://wa.me/2348012345678?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Muchim%27s%20Spot"
+              href="https://wa.me/2348066029768?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Muchim%27s%20Spot"
               target="_blank"
               rel="noopener noreferrer"
               variant="charcoal"
