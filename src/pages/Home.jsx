@@ -38,23 +38,23 @@ const Home = () => {
       transition={{ duration: 0.4 }}
     >
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+      <section className="relative min-h-screen flex items-center justify-start overflow-hidden bg-charcoal">
         {/* Background Image with Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+            backgroundImage: "url('/hero.avif')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/40" />
 
         {/* Animated Content */}
-        <div className="container-custom relative z-10 py-24 md:py-32">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-24 md:py-32">
           <motion.div
             variants={container}
             initial="hidden"
             animate="visible"
-            className="max-w-3xl"
+            className="max-w-3xl text-left"
           >
 
 <motion.h1
@@ -66,24 +66,19 @@ const Home = () => {
       text="Big Flavor."
       speed={90}
       startDelay={0}
-      cursorHideDelay={500}
     />
   </div>
-  <div>
+  <div className="whitespace-nowrap">
     <TypewriterText
-      text="Bigger"
+      text="Bigger "
       speed={90}
-      startDelay={500} // after first line finishes (~660ms) + short pause
-      cursorHideDelay={500}
+      startDelay={1140}
       className="text-gold-500 text-shadow-gold"
     />
-  </div>
-  <div>
     <TypewriterText
       text="Cravings."
       speed={90}
-      startDelay={1000} // after second line finishes (~360ms) + pause
-      cursorHideDelay={500}
+      startDelay={1830}
       className="text-gold-500 text-shadow-gold"
     />
   </div>
