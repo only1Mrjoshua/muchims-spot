@@ -125,31 +125,31 @@ const Menu = () => {
                 />
               </RevealOnScroll>
 
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.05 }}
-                variants={{
-                  hidden: { opacity: 0 },
-                  visible: {
-                    opacity: 1,
-                    transition: { staggerChildren: 0.08 },
-                  },
-                }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-              >
-                {category.items.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    variants={{
-                      hidden: { opacity: 0, y: 40 },
-                      visible: { opacity: 1, y: 0 },
-                    }}
-                  >
-                    <MenuCard {...item} />
-                  </motion.div>
-                ))}
-              </motion.div>
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.05 }}
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.06 },
+    },
+  }}
+  className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
+>
+  {category.items.map((item) => (
+    <motion.div
+      key={item.name}
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0 },
+      }}
+    >
+      <MenuCard {...item} size="sm" />   {/* 👈 compact size */}
+    </motion.div>
+  ))}
+</motion.div>
             </div>
           ))}
         </div>
