@@ -203,7 +203,7 @@ const Home = () => {
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                <MenuCard {...item} />
+                <MenuCard {...item} size="sm" />
               </motion.div>
             ))}
           </motion.div>
