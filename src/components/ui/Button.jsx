@@ -29,8 +29,8 @@ const Button = ({
     fullWidth ? 'w-full' : ''
   } ${className}`;
 
-  // ✅ Wrap any component type with motion()
-  const MotionComponent = motion(Component);
+  // ✅ Use motion.create() – supports all component types
+  const MotionComponent = motion.create(Component);
 
   return (
     <MotionComponent

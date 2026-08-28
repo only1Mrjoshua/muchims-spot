@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
 }
 
@@ -61,4 +61,10 @@ html, body {
   .text-shadow-gold {
     text-shadow: 0 2px 15px rgba(240, 179, 13, 0.3);
   }
+}
+
+.sticky-filter-bar {
+  position: sticky;
+  top: 80px; /* adjust to match your header height */
+  z-index: 40;
 }
