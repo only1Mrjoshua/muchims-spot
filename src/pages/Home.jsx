@@ -134,7 +134,7 @@ const Home = () => {
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealOnScroll direction="left">
-              <div className="relative">
+              <div className="relative px-2 sm:px-0 overflow-hidden sm:overflow-visible">
                 <div className="absolute inset-0 bg-gold-500/10 rounded-3xl transform rotate-3 scale-105" />
                 <img
                   src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -142,7 +142,7 @@ const Home = () => {
                   className="relative rounded-3xl shadow-2xl object-cover w-full h-[400px] md:h-[500px]"
                   loading="lazy"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-gold-500 text-white font-display font-bold text-2xl p-6 rounded-2xl shadow-xl">
+                <div className="absolute -bottom-6 -right-4 sm:-right-6 bg-gold-500 text-white font-display font-bold text-2xl p-6 rounded-2xl shadow-xl">
                   5★
                 </div>
               </div>
