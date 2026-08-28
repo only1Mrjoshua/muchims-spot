@@ -64,7 +64,7 @@ const Home = () => {
   <div>
     <TypewriterText
       text="Big Flavor."
-      speed={60}
+      speed={90}
       startDelay={0}
       cursorHideDelay={500}
     />
@@ -72,7 +72,7 @@ const Home = () => {
   <div>
     <TypewriterText
       text="Bigger"
-      speed={60}
+      speed={90}
       startDelay={500} // after first line finishes (~660ms) + short pause
       cursorHideDelay={500}
       className="text-gold-500 text-shadow-gold"
@@ -81,7 +81,7 @@ const Home = () => {
   <div>
     <TypewriterText
       text="Cravings."
-      speed={60}
+      speed={90}
       startDelay={1000} // after second line finishes (~360ms) + pause
       cursorHideDelay={500}
       className="text-gold-500 text-shadow-gold"
