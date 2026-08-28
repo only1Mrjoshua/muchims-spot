@@ -146,7 +146,7 @@ const Header = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       fullWidth
-                      className="justify-center"
+                      className="justify-center text-sm"
                     >
                       <Phone className="w-4 h-4 mr-2" />
                       Order Now
