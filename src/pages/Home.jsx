@@ -179,20 +179,20 @@ const Home = () => {
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
-                transition: { staggerChildren: 0.1 },
+                transition: { staggerChildren: 0.08 },
               },
             }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
           >
             {featuredItems.map((item) => (
               <motion.div
                 key={item.name}
                 variants={{
-                  hidden: { opacity: 0, y: 40 },
+                  hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
                 }}
               >
-                <MenuCard {...item} size="sm" />
+                <MenuCard {...item} size="xs" />   {/* 👈 using the new compact size */}
               </motion.div>
             ))}
           </motion.div>
