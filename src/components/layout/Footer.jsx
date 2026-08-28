@@ -35,7 +35,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="space-y-4">
-            <img src="/logo.png" alt="Muchim's Spot" className="h-14 w-auto" />
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Muchim's Spot" className="h-14 w-auto" />
+              <span className="font-display font-bold text-xl">
+                <span className="text-white">Muchim's</span>
+                <span className="text-gold-500"> Spot</span>
+              </span>
+            </div>
             <p className="text-white/70 text-sm max-w-xs">
               Big Flavor. Bigger Cravings. Serving the boldest shawarma, loaded fries, and burgers in Port Harcourt.
             </p>

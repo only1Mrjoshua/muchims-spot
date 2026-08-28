@@ -75,9 +75,13 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <img src="/logo.png" alt="Muchim's Spot Logo" className="h-12 md:h-14 w-auto" />
-          </Link>
+<Link to="/" className="flex-shrink-0 flex items-center gap-2">
+  <img src="/logo.png" alt="Muchim's Spot Logo" className="h-12 md:h-14 w-auto" />
+  <span className="font-display font-bold text-lg md:text-xl">
+    <span className="text-white">Muchim's</span>
+    <span className="text-gold-500"> Spot</span>
+  </span>
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
