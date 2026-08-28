@@ -9,7 +9,6 @@ import RevealOnScroll from '../components/ui/RevealOnScroll';
 import SectionHeading from '../components/ui/SectionHeading';
 import MenuCard from '../components/ui/MenuCard';
 import Testimonials from '../components/Testimonials';
-import CategoryShowcase from '../components/CategoryShowcase';
 
 const Home = () => {
   // Hero text stagger animation
@@ -205,9 +204,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* ===== CATEGORIES ===== */}
-      <CategoryShowcase />
 
       {/* ===== GALLERY ===== */}
       <section className="section-padding bg-off-white">
