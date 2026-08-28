@@ -18,7 +18,7 @@
         name: "Mixed Loaded", 
         price: 4500, 
         image: "/mixed-loaded.avif",
-        description: "The best of both worlds — beef and chicken loaded to perfection."
+        description: "The best of both worlds, beef and chicken loaded to perfection."
       },
     ],
   },
@@ -68,7 +68,7 @@
         name: "Yoghurt (Small)", 
         price: 1700, 
         image: "/yoghurt-small.avif",
-        description: "Creamy, refreshing yoghurt — perfect for a hot day."
+        description: "Creamy, refreshing yoghurt, perfect for a hot day."
       },
       { 
         name: "Yoghurt (Big)", 

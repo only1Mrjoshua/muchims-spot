@@ -80,7 +80,7 @@ const Menu = () => {
               Our <span className="text-gold-500">Menu</span>
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Explore our curated selection of bold flavors — from perfectly spiced shawarma 
+              Explore our curated selection of bold flavors, from perfectly spiced shawarma 
               to loaded fries and premium burgers. Every dish is made to crave.
             </p>
           </RevealOnScroll>
