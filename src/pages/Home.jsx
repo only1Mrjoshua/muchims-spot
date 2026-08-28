@@ -75,6 +75,7 @@ const Home = () => {
       startDelay={1140}
       className="text-gold-500 text-shadow-gold"
     />
+    <br className="sm:hidden" />  {/* ← line break only on mobile */}
     <TypewriterText
       text="Cravings."
       speed={90}
@@ -83,7 +84,6 @@ const Home = () => {
     />
   </div>
 </motion.h1>
-
             <motion.p
               variants={child}
               className="mt-6 text-white/80 text-lg md:text-xl max-w-xl leading-relaxed"
