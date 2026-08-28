@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-white/40 text-sm">
-          &copy; {new Date().getFullYear()} Muchim's Spot. All rights reserved. Made with ❤️ in Port Harcourt.
+          &copy; {new Date().getFullYear()} Muchim's Spot. All rights reserved.
         </div>
       </div>
     </footer>
