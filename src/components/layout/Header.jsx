@@ -1,4 +1,5 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿// src/components/layout/Header.jsx
+import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone } from 'lucide-react';
@@ -12,7 +13,7 @@ const NavLinks = ({ mobile = false, onClick = () => {} }) => {
   ];
 
   const baseClasses = `font-medium transition-colors duration-200 hover:text-gold-500 ${
-    mobile ? 'text-2xl py-2' : 'text-sm lg:text-base px-3 py-2'
+    mobile ? 'text-xl py-2' : 'text-sm lg:text-base px-3 py-2'
   }`;
 
   return (
@@ -24,8 +25,8 @@ const NavLinks = ({ mobile = false, onClick = () => {} }) => {
           onClick={onClick}
           className={({ isActive }) =>
             `${baseClasses} ${
-              isActive || (location.pathname === '/' && link.to === '/') 
-                ? 'text-gold-500' 
+              isActive || (location.pathname === '/' && link.to === '/')
+                ? 'text-gold-500'
                 : 'text-charcoal/80 dark:text-white/80'
             }`
           }
@@ -60,17 +61,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';   // removes the inline override, lets index.css govern again
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isMobileMenuOpen]);
-
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => setIsMobileMenuOpen(false);
 
@@ -84,12 +74,12 @@ const Header = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo – using public URL */}
+          {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img src="/logo.png" alt="Muchim's Spot Logo" className="h-12 md:h-14 w-auto" />
           </Link>
 
-          {/* Desktop Navigation – only Home & Menu */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             <NavLinks />
           </nav>
@@ -104,52 +94,68 @@ const Header = () => {
               size="sm"
             >
               <Phone className="w-4 h-4 mr-2" />
-              Order Online
+              Order Now
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle – Gold Icon */}
           <button
             onClick={toggleMenu}
             className="lg:hidden p-2 rounded-lg hover:bg-gold-50 transition-colors duration-200"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-charcoal" />
+              <X className="w-6 h-6 text-gold-500" />
             ) : (
-              <Menu className="w-6 h-6 text-charcoal" />
+              <Menu className="w-6 h-6 text-gold-500" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay & Dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="lg:hidden fixed inset-0 top-16 md:top-20 bg-white dark:bg-charcoal z-40 px-6 py-8 overflow-y-auto"
-          >
-            <nav className="flex flex-col items-start space-y-4">
-              <NavLinks mobile onClick={closeMenu} />
-              <div className="pt-6 w-full border-t border-light-gray">
-                <Button
-                  as="a"
-                  href="https://wa.me/2348066029768?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Muchim%27s%20Spot"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  fullWidth
-                  className="justify-center"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Order Online
-                </Button>
+          <>
+            {/* Overlay – full screen */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/50 z-40"
+              onClick={closeMenu}
+            />
+
+            {/* Dropdown – ~50% width, right‑aligned */}
+            <motion.div
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
+              className="absolute top-full right-4 z-50 bg-white dark:bg-charcoal shadow-xl border border-light-gray rounded-xl w-1/2 max-w-xs overflow-hidden"
+              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
+            >
+              <div className="p-5">
+                <nav className="flex flex-col items-start space-y-2">
+                  <NavLinks mobile onClick={closeMenu} />
+                  <div className="pt-4 w-full border-t border-light-gray">
+                    <Button
+                      as="a"
+                      href="https://wa.me/2348066029768?text=Hi%2C%20I%27d%20like%20to%20place%20an%20order%20from%20Muchim%27s%20Spot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      fullWidth
+                      className="justify-center"
+                    >
+                      <Phone className="w-4 h-4 mr-2" />
+                      Order Now
+                    </Button>
+                  </div>
+                </nav>
               </div>
-            </nav>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </header>
