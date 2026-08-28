@@ -56,23 +56,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display font-bold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              {['Home', 'Menu', 'About', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                    className="text-white/70 hover:text-gold-500 transition-colors duration-200 text-sm"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Hours */}
           <div>
             <h4 className="font-display font-bold text-lg mb-4">Opening Hours</h4>
