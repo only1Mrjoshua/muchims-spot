@@ -116,17 +116,6 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8, repeat: Infinity, repeatType: 'reverse' }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 flex flex-col items-center"
-        >
-          <span className="text-xs uppercase tracking-widest mb-2">Scroll</span>
-          <div className="w-0.5 h-8 bg-white/40" />
-        </motion.div>
       </section>
 
       {/* ===== ABOUT ===== */}
