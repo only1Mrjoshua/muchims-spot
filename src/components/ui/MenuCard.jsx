@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 
-const MenuCard = ({ name, price, image, description, size = 'md' }) => {
+const MenuCard = ({ name, price, image, description, size = 'md', className = '' }) => {
   const sizeClasses = {
     xs: {
       wrapper: 'rounded-lg shadow-sm hover:shadow-md',
@@ -33,11 +33,12 @@ const MenuCard = ({ name, price, image, description, size = 'md' }) => {
 
   return (
     <motion.div
-      className={`group bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 ${classes.wrapper}`}
+      className={`group bg-white overflow-hidden transition-all duration-300 hover:-translate-y-1 ${classes.wrapper} ${className} flex flex-col h-full`}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3 }}
     >
-      <div className={`relative overflow-hidden ${classes.image} bg-light-gray`}>
+      {/* Image – fixed aspect ratio */}
+      <div className={`relative overflow-hidden ${classes.image} bg-light-gray flex-shrink-0`}>
         <motion.img
           src={image}
           alt={name}
@@ -46,15 +47,21 @@ const MenuCard = ({ name, price, image, description, size = 'md' }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <div className={classes.padding}>
+
+      {/* Content – flex column to fill remaining space */}
+      <div className={`${classes.padding} flex-1 flex flex-col`}>
         <div className="flex justify-between items-start gap-1">
-          <h3 className={`font-display font-bold ${classes.title} text-charcoal leading-tight`}>{name}</h3>
+          <h3 className={`font-display font-bold ${classes.title} text-charcoal leading-tight`}>
+            {name}
+          </h3>
           <span className={`font-bold text-gold-500 ${classes.price} whitespace-nowrap`}>
             ₦{price.toLocaleString()}
           </span>
         </div>
         {description && (
-          <p className={`text-dark-gray/80 ${classes.desc} mt-0.5`}>{description}</p>
+          <p className={`text-dark-gray/80 ${classes.desc} mt-0.5 flex-1`}>
+            {description}
+          </p>
         )}
       </div>
     </motion.div>

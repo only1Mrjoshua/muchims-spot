@@ -182,7 +182,7 @@ const Home = () => {
                 transition: { staggerChildren: 0.08 },
               },
             }}
-            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
+            className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-fr"
           >
             {featuredItems.map((item) => (
               <motion.div
@@ -191,8 +191,9 @@ const Home = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                className="h-full"  // make the wrapper fill the grid cell
               >
-                <MenuCard {...item} size="xs" />   {/* 👈 using the new compact size */}
+                <MenuCard {...item} size="xs" className="h-full" />
               </motion.div>
             ))}
           </motion.div>

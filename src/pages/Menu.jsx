@@ -236,7 +236,7 @@ const Menu = () => {
                     transition: { staggerChildren: 0.06 },
                   },
                 }}
-                className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4"
+                className="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 auto-rows-fr"
               >
                 {category.items.map((item) => (
                   <motion.div
@@ -245,8 +245,9 @@ const Menu = () => {
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
                     }}
+                    className="h-full"
                   >
-                    <MenuCard {...item} size="sm" />
+                    <MenuCard {...item} size="sm" className="h-full" />
                   </motion.div>
                 ))}
               </motion.div>
