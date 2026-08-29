@@ -289,9 +289,8 @@ const Home = () => {
                     <div>
                       <h4 className="font-display font-bold text-lg">Opening Hours</h4>
                       <ul className="text-dark-gray/80 space-y-1">
-                        <li>Mon - Thu: 11:00 AM - 10:00 PM</li>
-                        <li>Fri - Sat: 11:00 AM - 11:00 PM</li>
-                        <li>Sunday: 12:00 PM - 8:00 PM</li>
+                        <li>Mon - Sat: 10:00 AM - 9:00 PM</li>
+                        <li>Sunday: 12:00 PM - 9:00 PM</li>
                       </ul>
                     </div>
                   </div>
@@ -335,7 +334,7 @@ const Home = () => {
               Craving Something <span className="text-white">Good?</span>
             </h2>
             <p className="text-charcoal/80 text-lg max-w-2xl mx-auto mb-8">
-              Order now and experience the boldest flavors in Lagos. Fresh, fast, and made just for you.
+              Order now and experience the boldest flavors in Port Harcourt. Fresh, fast, and made just for you.
             </p>
             <Button
               as="a"

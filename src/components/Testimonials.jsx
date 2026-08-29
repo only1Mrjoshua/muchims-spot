@@ -8,14 +8,14 @@ const testimonials = [
   {
     id: 1,
     name: "Aisha K.",
-    text: "Muchim's Spot is my go-to for late-night cravings! The Mixed Loaded is absolutely divine. Best in Lagos!",
+    text: "Muchim's Spot is my go-to for late-night cravings! The Mixed Loaded is absolutely divine. Best in Port Harcourt!",
     rating: 5,
     image: "https://i.pravatar.cc/150?img=1"
   },
   {
     id: 2,
     name: "Tunde O.",
-    text: "Best shawarma in Lagos, hands down. The portion sizes are insane and the flavors are unmatched.",
+    text: "Best shawarma in Port Harcourt, hands down. The portion sizes are insane and the flavors are unmatched.",
     rating: 5,
     image: "https://i.pravatar.cc/150?img=2"
   },
