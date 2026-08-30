@@ -21,10 +21,10 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Zara M.",
+    name: "Joshua S.",
     text: "I dream about their Loaded Fries. The perfect blend of crunch, cheese, and flavor. Absolutely craveable!",
     rating: 5,
-    image: "https://i.pravatar.cc/150?img=3"
+    image: "/josh.avif"
   },
 ];
 

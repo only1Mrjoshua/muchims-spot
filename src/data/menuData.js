@@ -20,6 +20,24 @@
         image: "/mixed-loaded.avif",
         description: "The best of both worlds, beef and chicken loaded to perfection."
       },
+      { 
+        name: "Pork Shawarma", 
+        price: 5000, 
+        image: "/pork-shawarma.avif",
+        description: "Savory pork wrapped in a soft pita with fresh toppings."
+      },
+      { 
+        name: "Goat Meat Shawarma", 
+        price: 4000, 
+        image: "/goat-shawarma.avif",
+        description: "Tender goat meat, spiced and wrapped in a warm pita."
+      },
+      { 
+        name: "Chicken Breast Vegetarian", 
+        price: 6200, 
+        image: "/chicken-breast-veg.avif",
+        description: "Premium chicken breast served over a bed of fresh vegetables."
+      },
     ],
   },
   {
@@ -42,12 +60,7 @@
         image: "/chicken-veg-salad.avif",
         description: "Fresh greens, grilled chicken, and a tangy vinaigrette."
       },
-      { 
-        name: "Chicken Breast Vegetarian", 
-        price: 6200, 
-        image: "/chicken-breast-veg.avif",
-        description: "Premium chicken breast served over a bed of fresh vegetables."
-      },
+      // Removed Chicken Breast Vegetarian (moved to Shawarma)
     ],
   },
   {
@@ -62,7 +75,7 @@
     ],
   },
   {
-    category: "Sandwiches", // new category
+    category: "Sandwiches",
     items: [
       { 
         name: "Sandwich", 
@@ -73,7 +86,7 @@
     ],
   },
   {
-    category: "Popcorn", // new category
+    category: "Popcorn",
     items: [
       { 
         name: "Popcorn", 
@@ -145,7 +158,6 @@ export const featuredItems = [
     image: "/parfait.avif",
     description: "Layered dessert with yoghurt, granola, and fruits."
   },
-  // Added new featured items
   { 
     name: "Sandwich", 
     price: 2500, 
