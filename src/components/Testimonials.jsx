@@ -7,17 +7,17 @@ import SectionHeading from './ui/SectionHeading';
 const testimonials = [
   {
     id: 1,
-    name: "Aisha K.",
+    name: "Onyinye A.",
     text: "Muchim's Spot is my go-to for late-night cravings! The Mixed Loaded is absolutely divine. Best in Port Harcourt!",
     rating: 5,
-    image: "https://i.pravatar.cc/150?img=1"
+    image: "/onyinye.avif"
   },
   {
     id: 2,
-    name: "Tunde O.",
+    name: "Jessie I.",
     text: "Best shawarma in Port Harcourt, hands down. The portion sizes are insane and the flavors are unmatched.",
     rating: 5,
-    image: "https://i.pravatar.cc/150?img=2"
+    image: "/jessie.avif"
   },
   {
     id: 3,
@@ -68,7 +68,7 @@ const Testimonials = () => {
                 <img 
                   src={testimonials[currentIndex].image} 
                   alt={testimonials[currentIndex].name}
-                  className="w-20 h-20 rounded-full border-2 border-gold-500"
+                  className="w-20 h-20 rounded-full border-2 border-gold-500 object-cover object-center"
                 />
               </div>
               <div className="flex justify-center mb-4 text-gold-500">
