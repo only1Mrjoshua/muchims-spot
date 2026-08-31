@@ -117,6 +117,12 @@
         image: "/parfait.avif",
         description: "Layered dessert with yoghurt, granola, and fresh fruits."
       },
+      { 
+        name: "Butter Cake", 
+        price: 2500, 
+        image: "/butter-cake.avif",
+        description: "Rich, buttery cake, soft and delicious."
+      },
     ],
   },
 ];
