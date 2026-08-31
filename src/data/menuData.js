@@ -15,10 +15,28 @@
         description: "Juicy grilled chicken, fresh veggies, and our signature sauce."
       },
       { 
-        name: "Mixed Loaded", 
+        name: "Mixed with 1 hot dog", 
+        price: 4000, 
+        image: "/mixed-loaded.avif",
+        description: "A delicious mix of beef and chicken with one hot dog, loaded to perfection."
+      },
+      { 
+        name: "Mixed with 2 hot dogs", 
         price: 4500, 
         image: "/mixed-loaded.avif",
-        description: "The best of both worlds, beef and chicken loaded to perfection."
+        description: "The ultimate mix, beef and chicken with two hot dogs for extra flavor."
+      },
+      { 
+        name: "Beef Shawarma with 2 hot dogs", 
+        price: 3500, 
+        image: "/beef-shawarma.avif",  // you can use a different image if you have one
+        description: "Classic beef shawarma, now with two hot dogs for a hearty meal."
+      },
+      { 
+        name: "Chicken Shawarma with 2 hot dogs", 
+        price: 3500, 
+        image: "/chicken-shawarma.avif",
+        description: "Juicy chicken shawarma, loaded with two hot dogs for extra satisfaction."
       },
       { 
         name: "Pork Shawarma", 
@@ -34,7 +52,7 @@
       },
       { 
         name: "Chicken Breast Vegetarian", 
-        price: 6200, 
+        price: 6000, 
         image: "/chicken-breast-veg.avif",
         description: "Premium chicken breast served over a bed of fresh vegetables."
       },
@@ -60,7 +78,6 @@
         image: "/chicken-veg-salad.avif",
         description: "Fresh greens, grilled chicken, and a tangy vinaigrette."
       },
-      // Removed Chicken Breast Vegetarian (moved to Shawarma)
     ],
   },
   {
@@ -135,10 +152,28 @@ export const featuredItems = [
     description: "Tender, spiced beef wrapped in a soft pita."
   },
   { 
-    name: "Mixed Loaded", 
+    name: "Mixed with 1 hot dog", 
+    price: 4000, 
+    image: "/mixed-loaded.avif",
+    description: "Beef and chicken with one hot dog, loaded to perfection."
+  },
+  { 
+    name: "Mixed with 2 hot dogs", 
     price: 4500, 
     image: "/mixed-loaded.avif",
-    description: "Beef and chicken loaded to perfection."
+    description: "Beef and chicken with two hot dogs, extra tasty!"
+  },
+  { 
+    name: "Beef Shawarma with 2 hot dogs", 
+    price: 3500, 
+    image: "/beef-shawarma.avif",
+    description: "Classic beef shawarma with two hot dogs."
+  },
+  { 
+    name: "Chicken Shawarma with 2 hot dogs", 
+    price: 3500, 
+    image: "/chicken-shawarma.avif",
+    description: "Juicy chicken shawarma with two hot dogs."
   },
   { 
     name: "Loaded Fries", 
@@ -154,7 +189,7 @@ export const featuredItems = [
   },
   { 
     name: "Chicken Breast Vegetarian", 
-    price: 6200, 
+    price: 6000, 
     image: "/chicken-breast-veg.avif",
     description: "Premium chicken breast over fresh vegetables."
   },
