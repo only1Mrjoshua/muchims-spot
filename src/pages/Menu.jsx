@@ -1,7 +1,7 @@
 ﻿// src/pages/Menu.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Utensils } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Utensils, X } from 'lucide-react';
 import { menuData } from '../data/menuData';
 import Button from '../components/ui/Button';
 import RevealOnScroll from '../components/ui/RevealOnScroll';
@@ -14,6 +14,7 @@ const Menu = () => {
     menuData[0]?.category || ''
   );
   const [headerHeight, setHeaderHeight] = useState(80);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const categoryRefs = useRef({});
   const isClickScrolling = useRef(false);
@@ -41,6 +42,20 @@ const Menu = () => {
     window.addEventListener('resize', updateHeaderHeight);
     return () => window.removeEventListener('resize', updateHeaderHeight);
   }, []);
+
+  // ==========================================
+  // BODY SCROLL LOCK WHEN MODAL IS OPEN
+  // ==========================================
+  useEffect(() => {
+    if (selectedItem) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedItem]);
 
   // ==========================================
   // SCROLL SPY (scroll-position based)
@@ -181,7 +196,6 @@ const Menu = () => {
         className="sticky z-40 bg-white/95 backdrop-blur-md border-b border-light-gray shadow-sm"
         style={{
           top: `${headerHeight}px`,
-          // ensure no parent overflow breaks sticky
         }}
       >
         <div className="container-custom">
@@ -245,7 +259,8 @@ const Menu = () => {
                       hidden: { opacity: 0, y: 30 },
                       visible: { opacity: 1, y: 0 },
                     }}
-                    className="h-full"
+                    className="h-full cursor-pointer"
+                    onClick={() => setSelectedItem(item)}
                   >
                     <MenuCard {...item} size="sm" className="h-full" />
                   </motion.div>
@@ -273,6 +288,8 @@ const Menu = () => {
                       hidden: { opacity: 0, x: -20 },
                       visible: { opacity: 1, x: 0 },
                     }}
+                    className="cursor-pointer"
+                    onClick={() => setSelectedItem(item)}
                   >
                     <MenuListItem {...item} />
                   </motion.div>
@@ -308,6 +325,75 @@ const Menu = () => {
           </RevealOnScroll>
         </div>
       </section>
+
+      {/* ===== ITEM DETAILS MODAL ===== */}
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setSelectedItem(null)}
+          >
+            {/* The Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="relative bg-charcoal rounded-[2rem] shadow-2xl max-w-sm w-full overflow-hidden min-h-[480px] flex flex-col justify-end"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Background Image */}
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
+              {/* Dark Gradient Overlay (fades from transparent at top to dark at bottom) */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
+
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="absolute top-4 right-4 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full p-2 transition-all duration-300"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
+
+              {/* Content (sits at the bottom over the gradient) */}
+              <div className="relative z-10 p-6 md:p-8 text-white w-full">
+                <h3 className="font-display font-bold text-2xl md:text-3xl mb-1 leading-tight">
+                  {selectedItem.name}
+                </h3>
+                
+                <p className="text-gold-500 font-bold text-xl mb-3">
+                  ₦{selectedItem.price.toLocaleString()}
+                </p>
+                
+                <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6">
+                  {selectedItem.description}
+                </p>
+
+                {/* Optional: Order Button matching the reference image style */}
+                <button
+                  onClick={() => {
+                    const text = encodeURIComponent(
+                      `Hi, I'd like to order ${selectedItem.name} (₦${selectedItem.price.toLocaleString()}) from Muchim's Spot`
+                    );
+                    window.open(`https://wa.me/2348066029768?text=${text}`, '_blank');
+                  }}
+                  className="w-full bg-white text-charcoal font-bold py-3.5 rounded-full hover:bg-gray-100 transition-colors text-center shadow-lg"
+                >
+                  Order this item
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
