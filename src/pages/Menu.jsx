@@ -381,7 +381,7 @@ const Menu = () => {
                 <button
                   onClick={() => {
                     const text = encodeURIComponent(
-                      `Hi, I'd like to order ${selectedItem.name} (₦${selectedItem.price.toLocaleString()}) from Muchim's Spot`
+                      `Hi, I'd like to order the ${selectedItem.name} (₦${selectedItem.price.toLocaleString()})`
                     );
                     window.open(`https://wa.me/2348066029768?text=${text}`, '_blank');
                   }}
