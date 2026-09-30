@@ -140,22 +140,34 @@
     category: "Drinks & Desserts",
     items: [
       { 
-        name: "Yoghurt (Small)", 
-        price: 1700, 
-        image: "/yoghurt-small.avif",
+        name: "Yoghurt", 
+        price: 3000, 
+        image: "/yoghurt.avif",
         description: "Creamy, refreshing yoghurt, perfect for a hot day."
-      },
-      { 
-        name: "Yoghurt (Big)", 
-        price: 2500, 
-        image: "/yoghurt-big.avif",
-        description: "Large size of our famous creamy yoghurt."
       },
       { 
         name: "Parfait", 
         price: 3500, 
         image: "/parfait.avif",
         description: "Layered dessert with yoghurt, granola, and fresh fruits."
+      },
+      { 
+        name: "Granola", 
+        price: 5000, 
+        image: "/granola.avif",
+        description: "Crunchy granola, perfect as a snack or breakfast topping."
+      },
+      { 
+        name: "Greek Yoghurt (500ml)", 
+        price: 5500, 
+        image: "/greek-yoghurt.avif",
+        description: "Thick, creamy Greek yoghurt in a 500ml size."
+      },
+      { 
+        name: "Ice Cream (350ml)", 
+        price: 4000, 
+        image: "/ice-cream.avif",
+        description: "Smooth, creamy ice cream in a 350ml cup."
       },
       { 
         name: "Butter Cake", 
