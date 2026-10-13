@@ -4,39 +4,21 @@
     items: [
       { 
         name: "Beef Shawarma", 
-        price: 3500, 
+        price: 4000, 
         image: "/beef-shawarma.avif",
-        description: "Tender, spiced beef wrapped in a soft pita with garlic sauce. Comes with 1 sausage."
+        description: "Tender, spiced beef wrapped in a soft pita with garlic sauce and fresh veggies."
       },
       { 
         name: "Chicken Shawarma", 
         price: 3500, 
         image: "/chicken-shawarma.avif",
-        description: "Juicy grilled chicken, fresh veggies, and our signature sauce. Comes with 1 sausage."
+        description: "Juicy grilled chicken, fresh veggies, and our signature sauce wrapped in a soft pita."
       },
       { 
-        name: "Beef Shawarma with 2 sausages", 
-        price: 4000, 
-        image: "/beef-shawarma.avif",
-        description: "Classic beef shawarma, now with two sausages for a hearty meal."
-      },
-      { 
-        name: "Chicken Shawarma with 2 sausages", 
-        price: 4000, 
-        image: "/chicken-shawarma.avif",
-        description: "Juicy chicken shawarma, loaded with two sausages for extra satisfaction."
-      },
-      { 
-        name: "Mixed with 1 sausage", 
-        price: 4500, 
+        name: "Mixed Shawarma", 
+        price: 6000, 
         image: "/mixed-loaded.avif",
-        description: "A delicious mix of beef and chicken with one sausage, loaded to perfection."
-      },
-      { 
-        name: "Mixed with 2 sausages", 
-        price: 5000, 
-        image: "/mixed-loaded.avif",
-        description: "The ultimate mix, beef and chicken with two sausages for extra flavor."
+        description: "A delicious mix of beef and chicken wrapped in a soft pita, loaded to perfection."
       },
       { 
         name: "Pork Shawarma", 
@@ -55,6 +37,17 @@
         price: 5500, 
         image: "/chicken-breast-veg.avif",
         description: "Premium chicken breast served over a bed of fresh vegetables."
+      },
+    ],
+  },
+  {
+    category: "Grilled & Specials",
+    items: [
+      { 
+        name: "Grilled Fish", 
+        price: 10000, 
+        image: "/grilled-fish.avif",
+        description: "Fresh grilled fish. Price ranges from 10,000 and above depending on size."
       },
     ],
   },
@@ -85,7 +78,7 @@
     items: [
       { 
         name: "Burger", 
-        price: 2500, 
+        price: 3500, 
         image: "/burger.avif",
         description: "Classic beef patty with lettuce, tomato, and secret sauce."
       },
@@ -95,10 +88,10 @@
     category: "Sandwiches",
     items: [
       { 
-        name: "Sandwich", 
-        price: 2500, 
-        image: "/sandwich.avif",
-        description: "A hearty sandwich loaded with fresh ingredients and your choice of filling."
+        name: "Chicken Sandwich", 
+        price: 3000, 
+        image: "/chicken-sandwich.avif",
+        description: "A hearty sandwich loaded with fresh chicken and ingredients."
       },
     ],
   },
@@ -159,13 +152,13 @@
       },
       { 
         name: "Greek Yoghurt (500ml)", 
-        price: 5500, 
+        price: 5000, 
         image: "/greek-yoghurt.avif",
         description: "Thick, creamy Greek yoghurt in a 500ml size."
       },
       { 
         name: "Ice Cream (350ml)", 
-        price: 4000, 
+        price: 3500, 
         image: "/ice-cream.avif",
         description: "Smooth, creamy ice cream in a 350ml cup."
       },
@@ -175,6 +168,36 @@
         image: "/butter-cake.avif",
         description: "Rich, buttery cake, soft and delicious."
       },
+      { 
+        name: "Fruit Juice", 
+        price: 3500, 
+        image: "/fruit-juice.avif",
+        description: "Freshly squeezed fruit juice."
+      },
+      { 
+        name: "Tiger Nut Plain", 
+        price: 3000, 
+        image: "/tiger-nut.avif",
+        description: "Refreshing and healthy plain tiger nut drink."
+      },
+      { 
+        name: "Tiger Nut (Banana Flavour)", 
+        price: 3000, 
+        image: "/tiger-nut.avif",
+        description: "Tiger nut drink infused with sweet banana flavor."
+      },
+      { 
+        name: "Tiger Nut (Chocolate Flavour)", 
+        price: 3000, 
+        image: "/tiger-nut.avif",
+        description: "Tiger nut drink infused with rich chocolate flavor."
+      },
+      { 
+        name: "Banana Signature Drink", 
+        price: 3500, 
+        image: "/banana-drink.avif",
+        description: "Our special signature banana drink."
+      },
     ],
   },
 ];
@@ -182,33 +205,33 @@
 export const featuredItems = [
   { 
     name: "Beef Shawarma", 
+    price: 4000, 
+    image: "/beef-shawarma.avif",
+    description: "Tender, spiced beef wrapped in a soft pita with garlic sauce."
+  },
+  { 
+    name: "Chicken Shawarma", 
     price: 3500, 
-    image: "/beef-shawarma.avif",
-    description: "Tender, spiced beef wrapped in a soft pita. Comes with 1 sausage."
-  },
-  { 
-    name: "Beef Shawarma with 2 sausages", 
-    price: 4000, 
-    image: "/beef-shawarma.avif",
-    description: "Classic beef shawarma with two sausages."
-  },
-  { 
-    name: "Chicken Shawarma with 2 sausages", 
-    price: 4000, 
     image: "/chicken-shawarma.avif",
-    description: "Juicy chicken shawarma with two sausages."
+    description: "Juicy grilled chicken, fresh veggies, and our signature sauce."
   },
   { 
-    name: "Mixed with 1 sausage", 
-    price: 4500, 
+    name: "Mixed Shawarma", 
+    price: 6000, 
     image: "/mixed-loaded.avif",
-    description: "Beef and chicken with one sausage, loaded to perfection."
+    description: "A delicious mix of beef and chicken, loaded to perfection."
   },
   { 
-    name: "Mixed with 2 sausages", 
+    name: "Pork Shawarma", 
     price: 5000, 
-    image: "/mixed-loaded.avif",
-    description: "Beef and chicken with two sausages, extra tasty!"
+    image: "/pork-shawarma.avif",
+    description: "Savory pork wrapped in a soft pita with fresh toppings."
+  },
+  { 
+    name: "Grilled Fish", 
+    price: 10000, 
+    image: "/grilled-fish.avif",
+    description: "Fresh grilled fish. Price depends on size (from 10,000 and above)."
   },
   { 
     name: "Loaded Fries", 
@@ -218,7 +241,7 @@ export const featuredItems = [
   },
   { 
     name: "Burger", 
-    price: 2500, 
+    price: 3500, 
     image: "/burger.avif",
     description: "Classic beef patty with secret sauce."
   },
@@ -229,16 +252,16 @@ export const featuredItems = [
     description: "Premium chicken breast over fresh vegetables."
   },
   { 
+    name: "Chicken Sandwich", 
+    price: 3000, 
+    image: "/chicken-sandwich.avif",
+    description: "A hearty sandwich loaded with fresh chicken."
+  },
+  { 
     name: "Parfait", 
     price: 3500, 
     image: "/parfait.avif",
     description: "Layered dessert with yoghurt, granola, and fruits."
-  },
-  { 
-    name: "Sandwich", 
-    price: 2500, 
-    image: "/sandwich.avif",
-    description: "A hearty sandwich loaded with fresh ingredients."
   },
   { 
     name: "Popcorn", 
