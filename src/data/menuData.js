@@ -4,37 +4,37 @@
     items: [
       { 
         name: "Beef Shawarma", 
-        price: 4000, 
+        price: 4500, 
         image: "/beef-shawarma.avif",
         description: "Tender, spiced beef wrapped in a soft pita with garlic sauce and fresh veggies."
       },
       { 
         name: "Chicken Shawarma", 
-        price: 3500, 
+        price: 4000, 
         image: "/chicken-shawarma.avif",
         description: "Juicy grilled chicken, fresh veggies, and our signature sauce wrapped in a soft pita."
       },
       { 
         name: "Mixed Shawarma", 
-        price: 6000, 
+        price: 6500, 
         image: "/mixed-loaded.avif",
         description: "A delicious mix of beef and chicken wrapped in a soft pita, loaded to perfection."
       },
       { 
         name: "Pork Shawarma", 
-        price: 5000, 
+        price: 5500, 
         image: "/pork-shawarma.avif",
         description: "Savory pork wrapped in a soft pita with fresh toppings."
       },
       { 
         name: "Goat Meat Shawarma", 
-        price: 4000, 
+        price: 4500, 
         image: "/goat-shawarma.avif",
         description: "Tender goat meat, spiced and wrapped in a warm pita."
       },
       { 
         name: "Chicken Breast Vegetarian shawarma", 
-        price: 5500, 
+        price: 6000, 
         image: "/chicken-breast-veg.avif",
         description: "Premium chicken breast served over a bed of fresh vegetables."
       },
@@ -78,7 +78,7 @@
     items: [
       { 
         name: "Burger", 
-        price: 3500, 
+        price: 4000, 
         image: "/burger.avif",
         description: "Classic beef patty with lettuce, tomato, and secret sauce."
       },
@@ -89,7 +89,7 @@
     items: [
       { 
         name: "Chicken Sandwich", 
-        price: 3000, 
+        price: 3500, 
         image: "/chicken-sandwich.avif",
         description: "A hearty sandwich loaded with fresh chicken and ingredients."
       },
@@ -169,6 +169,24 @@
         description: "Rich, buttery cake, soft and delicious."
       },
       { 
+        name: "Banana Bread - Small", 
+        price: 2500, 
+        image: "/banana-bread.avif",
+        description: "Soft, moist banana bread in a small size."
+      },
+      { 
+        name: "Banana Bread - Medium", 
+        price: 3500, 
+        image: "/banana-bread.avif",
+        description: "Soft, moist banana bread in a medium size."
+      },
+      { 
+        name: "Banana Bread - Big", 
+        price: 9000, 
+        image: "/banana-bread.avif",
+        description: "Soft, moist banana bread in a big size."
+      },
+      { 
         name: "Fruit Juice", 
         price: 3500, 
         image: "/fruit-juice.avif",
@@ -205,25 +223,25 @@
 export const featuredItems = [
   { 
     name: "Beef Shawarma", 
-    price: 4000, 
+    price: 4500, 
     image: "/beef-shawarma.avif",
     description: "Tender, spiced beef wrapped in a soft pita with garlic sauce."
   },
   { 
     name: "Chicken Shawarma", 
-    price: 3500, 
+    price: 4000, 
     image: "/chicken-shawarma.avif",
     description: "Juicy grilled chicken, fresh veggies, and our signature sauce."
   },
   { 
     name: "Mixed Shawarma", 
-    price: 6000, 
+    price: 6500, 
     image: "/mixed-loaded.avif",
     description: "A delicious mix of beef and chicken, loaded to perfection."
   },
   { 
     name: "Pork Shawarma", 
-    price: 5000, 
+    price: 5500, 
     image: "/pork-shawarma.avif",
     description: "Savory pork wrapped in a soft pita with fresh toppings."
   },
@@ -241,19 +259,19 @@ export const featuredItems = [
   },
   { 
     name: "Burger", 
-    price: 3500, 
+    price: 4000, 
     image: "/burger.avif",
     description: "Classic beef patty with secret sauce."
   },
   { 
     name: "Chicken Breast Vegetarian Shawarma", 
-    price: 5500, 
+    price: 6000, 
     image: "/chicken-breast-veg.avif",
     description: "Premium chicken breast over fresh vegetables."
   },
   { 
     name: "Chicken Sandwich", 
-    price: 3000, 
+    price: 3500, 
     image: "/chicken-sandwich.avif",
     description: "A hearty sandwich loaded with fresh chicken."
   },
